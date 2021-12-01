@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration status="WARN">
+    <properties>
+        <property name="LOG_HOME">D:/Softwares/Java/Logs</property>
+        <property name="APP_NAME">JavaApplication</property>
+        <property name="FILE_NAME">app</property>
+        <property name="APPENDER_NAME">rollingrandom</property>
+    </properties>
+    <!-- define Appender: 定义日志追加器 -->
+    <Appenders>
+        <!-- RollingRandomAccessFile Appender -->
+        <!-- 指定文件名称,文件转移的命名规则 -->
+        <RollingRandomAccessFile name="${APPENDER_NAME}"
+        fileName="${LOG_HOME}/${APP_NAME}/${date:yyyy-MM}/${FILE_NAME}_${date:yyyyMMdd}.log"
+        filePattern="${LOG_HOME}/${APP_NAME}/${date:yyyy-MM}/${FILE_NAME}_%d{yyyyMMdd_HHmm}_%i.log">
+            <PatternLayout pattern="%msg%n"/>
+            <!-- 指定文件滚动规则 -->
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="10" />
+                <SizeBasedTriggeringPolicy size="5MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+    </Appenders>
+    <!-- define logger: 配置logger -->
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="${APPENDER_NAME}"></AppenderRef>
+        </Root>
+    </Loggers>
+</Configuration>
