@@ -3,6 +3,7 @@ package indi.jends.javapp.lambda;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  * description: CommonUtils
@@ -15,8 +16,9 @@ public class LambdaRunner {
 
     @PostConstruct
     public void testMethod() {
-        MathOperation addition = (int a, int b) -> a + b;
 
-        System.out.println(addition.operation(5,6));
+        List<String> resilt = LambdaUtils.sortedByLength(LambdaUtils.list);
+
+        System.out.println("resilt = " + resilt);
     }
 }
