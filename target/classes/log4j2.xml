@@ -13,7 +13,7 @@
         <RollingRandomAccessFile name="${APPENDER_NAME}"
         fileName="${LOG_HOME}/${APP_NAME}/${date:yyyy-MM}/${FILE_NAME}_${date:yyyyMMdd}.log"
         filePattern="${LOG_HOME}/${APP_NAME}/${date:yyyy-MM}/${FILE_NAME}_%d{yyyyMMdd_HHmm}_%i.log">
-            <PatternLayout pattern="%msg%n"/>
+            <PatternLayout pattern="%l:%m%n"/>
             <!-- 指定文件滚动规则 -->
             <Policies>
                 <TimeBasedTriggeringPolicy interval="10" />

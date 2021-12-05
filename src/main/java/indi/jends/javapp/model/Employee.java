@@ -2,6 +2,7 @@ package indi.jends.javapp.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -15,6 +16,7 @@ import java.util.Date;
 @ToString
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
     private String id;

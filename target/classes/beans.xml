@@ -6,6 +6,8 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <context:component-scan base-package="indi.jends.javapp"/>
+    <import resource="dbs.xml"/>
+
     <!-- LOG MESSAGE -->
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
